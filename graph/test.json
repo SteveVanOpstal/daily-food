@@ -1,0 +1,494 @@
+{
+  "data": {
+    "addUnit": {
+      "unit": [
+        {
+          "abbr": "ml",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "cl",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "l",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "pnt",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "gal",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "lb",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "tsp",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "fl-oz",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "qt",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "part",
+          "singular": "part",
+          "plural": "parts"
+        },
+        {
+          "abbr": "dl",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "cup",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "g",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "kg",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "oz",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "Tbs",
+          "singular": null,
+          "plural": null
+        },
+        {
+          "abbr": "mg",
+          "singular": null,
+          "plural": null
+        }
+      ]
+    },
+    "addProduct": {
+      "product": [
+        {
+          "name": "feta",
+          "plural": null
+        },
+        {
+          "name": "salt",
+          "plural": null
+        },
+        {
+          "name": "tomato",
+          "plural": "tomatoes"
+        },
+        {
+          "name": "olive oil",
+          "plural": null
+        },
+        {
+          "name": "baking paper sheet",
+          "plural": "baking paper sheets"
+        },
+        {
+          "name": "egg",
+          "plural": "eggs"
+        },
+        {
+          "name": "eggplant",
+          "plural": "eggplants"
+        },
+        {
+          "name": "clove of garlic",
+          "plural": "cloves of garlic"
+        },
+        {
+          "name": "fresh parsley",
+          "plural": null
+        },
+        {
+          "name": "dried marjoram",
+          "plural": null
+        },
+        {
+          "name": "vinegar",
+          "plural": null
+        },
+        {
+          "name": "sesame seeds",
+          "plural": null
+        },
+        {
+          "name": "dried basil",
+          "plural": null
+        },
+        {
+          "name": "dried dill",
+          "plural": null
+        },
+        {
+          "name": "nutmeg",
+          "plural": null
+        },
+        {
+          "name": "black pepper",
+          "plural": null
+        },
+        {
+          "name": "dried oregano",
+          "plural": null
+        },
+        {
+          "name": "dried thyme",
+          "plural": null
+        },
+        {
+          "name": "red onion",
+          "plural": "red onions"
+        },
+        {
+          "name": "sugar",
+          "plural": null
+        }
+      ]
+    },
+    "addMeasurement": {
+      "measurement": [
+        {
+          "id": "0x4e48",
+          "amount": 1,
+          "unit": null,
+          "product": {
+            "name": "baking paper sheet"
+          }
+        },
+        {
+          "id": "0x4e49",
+          "amount": 2,
+          "unit": null,
+          "product": {
+            "name": "egg"
+          }
+        },
+        {
+          "id": "0x4e4a",
+          "amount": 1,
+          "unit": null,
+          "product": {
+            "name": "eggplant"
+          }
+        },
+        {
+          "id": "0x4e4b",
+          "amount": 10,
+          "unit": {
+            "abbr": "g"
+          },
+          "product": {
+            "name": "sesame seeds"
+          }
+        },
+        {
+          "id": "0x4e4c",
+          "amount": 1,
+          "unit": {
+            "abbr": "part"
+          },
+          "product": {
+            "name": "pepper"
+          }
+        },
+        {
+          "id": "0x4e4d",
+          "amount": 1,
+          "unit": {
+            "abbr": "part"
+          },
+          "product": {
+            "name": "dried oregano"
+          }
+        },
+        {
+          "id": "0x4e4e",
+          "amount": 1,
+          "unit": {
+            "abbr": "part"
+          },
+          "product": {
+            "name": "dried basil"
+          }
+        },
+        {
+          "id": "0x4e4f",
+          "amount": null,
+          "unit": null,
+          "product": {
+            "name": "vinegar"
+          }
+        },
+        {
+          "id": "0x4e50",
+          "amount": 150,
+          "unit": {
+            "abbr": "g"
+          },
+          "product": {
+            "name": "feta"
+          }
+        },
+        {
+          "id": "0x4e51",
+          "amount": 0.5,
+          "unit": null,
+          "product": {
+            "name": "red onion"
+          }
+        },
+        {
+          "id": "0x4e52",
+          "amount": 2,
+          "unit": null,
+          "product": {
+            "name": "tomato"
+          }
+        },
+        {
+          "id": "0x4e54",
+          "amount": 1,
+          "unit": {
+            "abbr": "part"
+          },
+          "product": {
+            "name": "dried dill"
+          }
+        },
+        {
+          "id": "0x4e55",
+          "amount": null,
+          "unit": null,
+          "product": {
+            "name": "sugar"
+          }
+        },
+        {
+          "id": "0x4e56",
+          "amount": 2,
+          "unit": null,
+          "product": {
+            "name": "clove of garlic"
+          }
+        },
+        {
+          "id": "0x4e57",
+          "amount": 10,
+          "unit": {
+            "abbr": "g"
+          },
+          "product": {
+            "name": "fresh parsley"
+          }
+        },
+        {
+          "id": "0x4e58",
+          "amount": 1,
+          "unit": {
+            "abbr": "part"
+          },
+          "product": {
+            "name": "dried marjoram"
+          }
+        },
+        {
+          "id": "0x4e59",
+          "amount": 2,
+          "unit": {
+            "abbr": "part"
+          },
+          "product": {
+            "name": "salt"
+          }
+        },
+        {
+          "id": "0x4e5a",
+          "amount": 1,
+          "unit": {
+            "abbr": "part"
+          },
+          "product": {
+            "name": "dried thyme"
+          }
+        },
+        {
+          "id": "0x4e5b",
+          "amount": null,
+          "unit": null,
+          "product": {
+            "name": "olive oil"
+          }
+        }
+      ]
+    },
+    "addTip": {
+      "tip": [
+        {
+          "title": "Didn't work, my dish is still salty and I'm hungry",
+          "description": "Try to increase the volume of your dish. For example, you are creating a tomato sauce, add more tomatoes"
+        },
+        {
+          "title": "My dish is too sour",
+          "description": "Adding something sweet will balance out the sour. In a liquid like a tomato sauce you can add granulated sugar. In something like a salad you can use honey."
+        },
+        {
+          "title": "My dish is too sweet",
+          "description": "Adding something sour will balance out the sweet. Vinegar is an easy source of sour. However in something like a tomato sauce it might be easier to use tomato paste."
+        },
+        {
+          "title": "Salt? a spice?",
+          "description": "Yes salt is a spice for me, I'm white."
+        },
+        {
+          "title": "Dive in head first",
+          "description": "Seasoning can be overwhelming, how many parts of the what now? Just add some spices, taste, adjust. Most dried herbs like oregano or thyme are very mild, adding a lot of it won't ruin your dish. Watch out for salt, nutmeg, cinnamon and anything spicy, they will ruin your dish so start of slow with these."
+        },
+        {
+          "title": "My dish is too salty",
+          "description": "Yikes. In some cases pepper can help."
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "touched_uids": 595,
+    "tracing": {
+      "version": 1,
+      "startTime": "2021-08-23T19:20:04.425911153+02:00",
+      "endTime": "2021-08-23T19:20:04.450591495+02:00",
+      "duration": 24680339,
+      "execution": {
+        "resolvers": [
+          {
+            "path": ["addUnit"],
+            "parentType": "Mutation",
+            "fieldName": "addUnit",
+            "returnType": "AddUnitPayload",
+            "startOffset": 311576,
+            "duration": 9424399,
+            "dgraph": [
+              {
+                "label": "preMutationQuery",
+                "startOffset": 396865,
+                "duration": 1952066
+              },
+              {
+                "label": "mutation",
+                "startOffset": 2484392,
+                "duration": 4775579
+              },
+              {
+                "label": "query",
+                "startOffset": 7909557,
+                "duration": 1822442
+              }
+            ]
+          },
+          {
+            "path": ["addProduct"],
+            "parentType": "Mutation",
+            "fieldName": "addProduct",
+            "returnType": "AddProductPayload",
+            "startOffset": 9743419,
+            "duration": 5680101,
+            "dgraph": [
+              {
+                "label": "preMutationQuery",
+                "startOffset": 9831732,
+                "duration": 1878898
+              },
+              {
+                "label": "mutation",
+                "startOffset": 11838845,
+                "duration": 1771212
+              },
+              {
+                "label": "query",
+                "startOffset": 14100374,
+                "duration": 1319289
+              }
+            ]
+          },
+          {
+            "path": ["addMeasurement"],
+            "parentType": "Mutation",
+            "fieldName": "addMeasurement",
+            "returnType": "AddMeasurementPayload",
+            "startOffset": 15432350,
+            "duration": 6673572,
+            "dgraph": [
+              {
+                "label": "preMutationQuery",
+                "startOffset": 15571076,
+                "duration": 1322552
+              },
+              {
+                "label": "mutation",
+                "startOffset": 17138296,
+                "duration": 1769343
+              },
+              {
+                "label": "query",
+                "startOffset": 19359396,
+                "duration": 2742820
+              }
+            ]
+          },
+          {
+            "path": ["addTip"],
+            "parentType": "Mutation",
+            "fieldName": "addTip",
+            "returnType": "AddTipPayload",
+            "startOffset": 22118493,
+            "duration": 2559025,
+            "dgraph": [
+              {
+                "label": "preMutationQuery",
+                "startOffset": 0,
+                "duration": 0
+              },
+              {
+                "label": "mutation",
+                "startOffset": 22174476,
+                "duration": 1291950
+              },
+              {
+                "label": "query",
+                "startOffset": 23907429,
+                "duration": 766869
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

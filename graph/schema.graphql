@@ -1,0 +1,51 @@
+type Recipe {
+  id: ID!
+  title: String!
+  description: String
+  measurements: [Measurement]
+  parts: [Part]
+  draft: Boolean!
+}
+
+type Measurement {
+  id: ID!
+  amount: Float
+  unit: Unit
+  product: Product!
+}
+
+type Product {
+  name: String! @id @search(by: [term])
+  plural: String
+  measurements: [Measurement]
+  tips: [Tip]
+  basic: Boolean
+}
+
+type Unit {
+  abbr: String! @id
+  singular: String
+  plural: String
+  relative: Boolean
+}
+
+type Tip {
+  id: ID!
+  title: String!
+  description: String!
+}
+
+type Part {
+  id: ID!
+  title: String!
+  related: [Part] @hasInverse(field: related)
+  actions: [Action]
+}
+
+type Action {
+  id: ID!
+  description: String! @search(by: [term])
+  icon: String
+  measurement: Measurement
+  actions: [Action]
+}
