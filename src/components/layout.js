@@ -40,6 +40,16 @@ const ThemeStyles = createGlobalStyle`
   h1, h2, h3, h4 {
     color: ${(props) => props.theme.accentColor};
   }
+
+  svg.MuiSvgIcon-root {
+    width: 1em;
+    height: 1em;
+    font-size: 1.2em;
+  }
+
+  button.MuiButtonBase-root {
+    font-size: unset;
+  }
 `;
 
 const lightPallette = {
@@ -117,7 +127,7 @@ const Layout = ({children, location}) => {
       >
         <TopNavigation />
       </Box>
-      <Box sx={{maxWidth: 600, margin: 1}}>
+      <Box sx={{maxWidth: 800, margin: 1}}>
         {children}
         <Box sx={{displayPrint: 'none', marginBottom: '56px'}}>
           <Settings />

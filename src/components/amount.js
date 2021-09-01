@@ -62,7 +62,7 @@ const Amount = ({measurement}) => {
 
   return (
     <span>
-      {knownUnit() && <UnitSelect {...handleConversion(system)} />}
+      {knownUnit() && <UnitSelect {...handleConversion(system)} id={measurement.id} />}
       {!knownUnit() && (
         <React.Fragment>
           {fractions(roundToPrecision(peopleAdjustedAmount(), 3))} {unitPluralise()}

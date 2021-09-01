@@ -3,6 +3,7 @@ import systemReducer from './systemSlice';
 import darkModeReducer from './darkModeSlice';
 import peopleReducer from './peopleSlice';
 import fontReducer from './fontSlice';
+import unitsReducer from './unitsSlice';
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     darkMode: darkModeReducer,
     people: peopleReducer,
     font: fontReducer,
+    units: unitsReducer,
   },
 });

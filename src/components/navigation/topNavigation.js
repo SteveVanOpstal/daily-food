@@ -2,15 +2,21 @@ import * as React from 'react';
 import {Link} from 'gatsby';
 import {styled} from '@material-ui/system';
 
-const NavItem = styled('li')(({theme}) => ({
-  padding: theme.spacing(3),
-  listStyleType: 'none',
-  fontSize: '2rem',
+const Nav = styled('ul')(({theme}) => ({
+  display: 'grid',
+  padding: 0,
+  gridTemplateColumns: '1fr auto 1fr',
+  gap: '3em',
 }));
 
-const Today = styled(NavItem)({
-  fontSize: '3rem',
-});
+const NavItem = styled('li')(({theme}) => ({
+  listStyleType: 'none',
+  fontSize: '2em',
+}));
+
+const Today = styled(NavItem)(({theme}) => ({
+  fontSize: '3em',
+}));
 
 const StyledLink = styled(Link)(({theme}) => ({
   color: theme.palette.text.primary,
@@ -24,9 +30,9 @@ const StyledLink = styled(Link)(({theme}) => ({
 
 const TopNavigation = () => {
   return (
-    <nav>
-      <ul style={{display: 'flex'}}>
-        <NavItem>
+    <nav style={{margin: '60px 0'}}>
+      <Nav>
+        <NavItem sx={{textAlign: 'right'}}>
           <StyledLink activeClassName="active" to="/history">
             History
           </StyledLink>
@@ -38,10 +44,10 @@ const TopNavigation = () => {
         </Today>
         <NavItem>
           <StyledLink activeClassName="active" to="/recipes">
-            All Recipes
+            Recipes
           </StyledLink>
         </NavItem>
-      </ul>
+      </Nav>
     </nav>
   );
 };

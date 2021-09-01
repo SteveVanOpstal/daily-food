@@ -7,7 +7,7 @@ import Product from './product';
 const Action = ({action}) => {
   return (
     <React.Fragment>
-      <Box sx={{display: 'flex', alignItems: 'center', gap: 0.4}}>
+      <Box sx={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
         <ActionIcon action={action} />
         {(() => {
           if (action.measurement) {

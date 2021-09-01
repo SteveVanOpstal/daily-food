@@ -16,7 +16,7 @@ const RecipesPage = ({data}) => {
       <ActionFragment />
       <PartFragment />
       <Helmet>
-        <title>All Recipes | Daily Food</title>
+        <title>Recipes | Daily Food</title>
       </Helmet>
       <main>
         <h1>{data.server.getRecipe.title}</h1>

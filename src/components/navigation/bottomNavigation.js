@@ -25,9 +25,24 @@ const Layout = ({location, theme}) => {
           backgroundColor: theme.backgroundColor,
         }}
       >
-        <BottomNavigationAction value="/history" label="History" icon={<RestoreIcon />} />
-        <BottomNavigationAction value="/" label="Today" icon={<DinnerDiningIcon />} />
-        <BottomNavigationAction value="/recipes" label="All Recipes" icon={<ReceiptLongIcon />} />
+        <BottomNavigationAction
+          sx={{fontSize: 'unset'}}
+          value="/history"
+          label="History"
+          icon={<RestoreIcon />}
+        />
+        <BottomNavigationAction
+          sx={{fontSize: 'unset'}}
+          value="/"
+          label="Today"
+          icon={<DinnerDiningIcon />}
+        />
+        <BottomNavigationAction
+          sx={{fontSize: 'unset'}}
+          value="/recipes"
+          label="Recipes"
+          icon={<ReceiptLongIcon />}
+        />
       </BottomNavigation>
     </Paper>
   );

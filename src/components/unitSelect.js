@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
+import React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import convert from 'convert-units';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -12,14 +12,15 @@ import ListItemButton from '@material-ui/core/ListItemButton';
 import {styled} from '@material-ui/system';
 import {EXCLUDED_UNITS} from '../../constants';
 import {fractions, roundToPrecision} from './amount';
+import {setUnit} from '../state/unitsSlice';
 
 const UnitButton = styled(Button)({
-  fontSize: '1rem',
+  fontSize: '1em',
   minWidth: 0,
   padding: 0,
   textTransform: 'none',
   verticalAlign: 'unset',
-  lineHeight: '1rem',
+  lineHeight: '1em',
 });
 
 function getPossibleUnits(unit, system) {
@@ -34,17 +35,21 @@ function getPossibleUnits(unit, system) {
 
 const UnitSelect = (props) => {
   const system = useSelector((state) => state.system.value);
-  const [selectedUnit, setSelectedUnit] = useState(props.unit);
+  const units = useSelector((state) => state.units.value);
+  const [selectedUnit, setSelectedUnit] = React.useState(units[props.id] || props.unit);
   const [open, setOpen] = React.useState(false);
-  const [units, setUnits] = React.useState([]);
+  const [possibleUnits, setPossibleUnits] = React.useState([]);
+
+  const dispatch = useDispatch();
 
   const handleUnitClick = (unit) => {
     setSelectedUnit(unit);
     setOpen(false);
+    dispatch(setUnit({id: props.id, unit}));
   };
 
   const handleOpen = () => {
-    setUnits(getPossibleUnits(selectedUnit, system));
+    setPossibleUnits(getPossibleUnits(selectedUnit, system));
     setOpen(true);
   };
 
@@ -58,7 +63,7 @@ const UnitSelect = (props) => {
         <DialogContent>
           <FormControl>
             <List native input={<OutlinedInput label="Timezone" />}>
-              {units.map((unit) => (
+              {possibleUnits.map((unit) => (
                 <ListItemButton
                   key={unit.abbr}
                   selected={unit.abbr === selectedUnit.abbr}
