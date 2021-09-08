@@ -1,8 +1,8 @@
 import {Box} from '@material-ui/core';
 import React from 'react';
-import Amount from './amount';
+import Amount from '../measurements/measurement/amount';
 import ActionIcon from './actionIcon';
-import Product from './product';
+import Product from '../measurements/measurement/product';
 
 const Action = ({action}) => {
   return (

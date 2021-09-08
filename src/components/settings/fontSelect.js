@@ -8,24 +8,29 @@ const FontSelect = () => {
   const font = useSelector((state) => state.font.value);
   const dispatch = useDispatch();
 
+  const handleChange = (value) => {
+    if (value !== null) {
+      dispatch(set(value));
+    }
+  };
+
   return (
     <ToggleButtonGroup
       value={font}
       exclusive
-      onChange={(event, value) => dispatch(set(value))}
+      onChange={(event, value) => handleChange(value)}
       aria-label=""
-      orientation="vertical"
     >
-      <ToggleButton value="cursive" aria-label="">
-        Cursive
-      </ToggleButton>
-      <ToggleButton value="clean" aria-label="">
-        Clean
-      </ToggleButton>
       <ToggleButton value="marker" aria-label="">
         Marker
       </ToggleButton>
-      <ToggleButton value="Allison" aria-label="">
+      <ToggleButton value="cursive" aria-label="">
+        Cursive
+      </ToggleButton>
+      <ToggleButton value="sans" aria-label="">
+        Sans
+      </ToggleButton>
+      {/* <ToggleButton value="Allison" aria-label="">
         Allison
       </ToggleButton>
       <ToggleButton value="Amatic SC" aria-label="">
@@ -51,7 +56,7 @@ const FontSelect = () => {
       </ToggleButton>
       <ToggleButton value="Sue Ellen Francisco" aria-label="">
         Sue Ellen Francisco
-      </ToggleButton>
+      </ToggleButton> */}
     </ToggleButtonGroup>
   );
 };

@@ -18,18 +18,26 @@ const SystemSelect = () => {
   const system = useSelector((state) => state.system.value);
   const dispatch = useDispatch();
 
+  const handleChange = (value) => {
+    if (value !== null) {
+      dispatch(set(value));
+    }
+  };
+
   return (
     <ToggleButtonGroup
       value={system}
       exclusive
-      onChange={(event, value) => dispatch(set(value))}
+      onChange={(event, value) => handleChange(value)}
       aria-label="system of measurement"
     >
-      <ToggleButton value="metric" aria-label="metric">
+      <ToggleButton sx={{gap: '0.3em'}} value="metric" aria-label="metric">
         <StraightenIcon color="primary" />
+        <span>Metric</span>
       </ToggleButton>
-      <ToggleButton value="imperial" aria-label="imperial">
+      <ToggleButton sx={{gap: '0.3em'}} value="imperial" aria-label="imperial">
         <CrownIcon color="primary" />
+        <span>Imperial</span>
       </ToggleButton>
     </ToggleButtonGroup>
   );

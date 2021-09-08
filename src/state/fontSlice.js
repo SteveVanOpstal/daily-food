@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 export const fontSlice = createSlice({
   name: 'font',
   initialState: {
-    value: localStorage.getItem('font') || 'cursive',
+    value: localStorage.getItem('font') || 'marker',
   },
   reducers: {
     set: (state, action) => {

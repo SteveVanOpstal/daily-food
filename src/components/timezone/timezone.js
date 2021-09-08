@@ -19,7 +19,7 @@ const Timezone = () => {
         Watch the stream today at{' '}
         <TimezoneSelect time={data.site.siteMetadata.streamStart}></TimezoneSelect>
       </p>
-      <a href="https://www.twitch.tv/sp4zie">twitch.tv/spaz</a>
+      <a href="https://www.twitch.tv/sp4zie">twitch.tv/nice_kok_</a>
     </React.Fragment>
   );
 };

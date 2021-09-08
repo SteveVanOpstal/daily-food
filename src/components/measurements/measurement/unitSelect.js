@@ -10,9 +10,9 @@ import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemButton from '@material-ui/core/ListItemButton';
 import {styled} from '@material-ui/system';
-import {EXCLUDED_UNITS} from '../../constants';
+import {EXCLUDED_UNITS} from '../../../../constants';
 import {fractions, roundToPrecision} from './amount';
-import {setUnit} from '../state/unitsSlice';
+import {setUnit} from '../../../state/unitsSlice';
 
 const UnitButton = styled(Button)({
   fontSize: '1em',
@@ -35,8 +35,8 @@ function getPossibleUnits(unit, system) {
 
 const UnitSelect = (props) => {
   const system = useSelector((state) => state.system.value);
-  const units = useSelector((state) => state.units.value);
-  const [selectedUnit, setSelectedUnit] = React.useState(units[props.id] || props.unit);
+  const stateUnit = useSelector((state) => state.units.value[props.id]);
+  const [selectedUnit, setSelectedUnit] = React.useState(props.unit);
   const [open, setOpen] = React.useState(false);
   const [possibleUnits, setPossibleUnits] = React.useState([]);
 
@@ -49,16 +49,23 @@ const UnitSelect = (props) => {
   };
 
   const handleOpen = () => {
-    setPossibleUnits(getPossibleUnits(selectedUnit, system));
+    setPossibleUnits(getPossibleUnits(stateUnit || selectedUnit, system));
     setOpen(true);
   };
 
   return (
     <React.Fragment>
       <span>
-        {fractions(roundToPrecision(convert(props.val).from(props.unit).to(selectedUnit), 3))}
+        {fractions(
+          roundToPrecision(
+            convert(props.val)
+              .from(props.unit)
+              .to(stateUnit || selectedUnit),
+            3
+          )
+        )}
       </span>
-      <UnitButton onClick={handleOpen}>{selectedUnit}</UnitButton>
+      <UnitButton onClick={handleOpen}>{stateUnit || selectedUnit}</UnitButton>
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogContent>
           <FormControl>
@@ -66,7 +73,7 @@ const UnitSelect = (props) => {
               {possibleUnits.map((unit) => (
                 <ListItemButton
                   key={unit.abbr}
-                  selected={unit.abbr === selectedUnit.abbr}
+                  selected={unit.abbr === (stateUnit || selectedUnit).abbr}
                   onClick={() => handleUnitClick(unit.abbr)}
                 >
                   <ListItemText primary={unit.abbr} secondary={unit.plural} />

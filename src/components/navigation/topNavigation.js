@@ -2,21 +2,20 @@ import * as React from 'react';
 import {Link} from 'gatsby';
 import {styled} from '@material-ui/system';
 
-const Nav = styled('ul')(({theme}) => ({
+const Nav = styled('ul')({
   display: 'grid',
   padding: 0,
   gridTemplateColumns: '1fr auto 1fr',
-  gap: '3em',
-}));
+});
 
-const NavItem = styled('li')(({theme}) => ({
+const NavItem = styled('li')({
   listStyleType: 'none',
   fontSize: '2em',
-}));
+});
 
-const Today = styled(NavItem)(({theme}) => ({
+const Today = styled(NavItem)({
   fontSize: '3em',
-}));
+});
 
 const StyledLink = styled(Link)(({theme}) => ({
   color: theme.palette.text.primary,
@@ -31,10 +30,17 @@ const StyledLink = styled(Link)(({theme}) => ({
 const TopNavigation = () => {
   return (
     <nav style={{margin: '60px 0'}}>
-      <Nav>
+      <Nav
+        sx={{
+          gap: {
+            sm: '2em',
+            md: '2.5em',
+          },
+        }}
+      >
         <NavItem sx={{textAlign: 'right'}}>
-          <StyledLink activeClassName="active" to="/history">
-            History
+          <StyledLink activeClassName="active" to="/schedule">
+            Schedule
           </StyledLink>
         </NavItem>
         <Today>

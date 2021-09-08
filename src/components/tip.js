@@ -17,9 +17,9 @@ function TipsAndUpdatesIcon(props) {
 
 const Tip = ({title, description}) => {
   return (
-    <Paper elevation={3} sx={{margin: 1, padding: 2}}>
+    <Paper elevation={3} sx={{padding: '0.8em'}}>
       <Box sx={{display: 'flex'}}>
-        <TipsAndUpdatesIcon sx={{marginRight: 1}} color="primary" />
+        <TipsAndUpdatesIcon sx={{marginRight: '0.4em', marginTop: '0.2em'}} color="primary" />
         <Title>{title}</Title>
       </Box>
       {description}

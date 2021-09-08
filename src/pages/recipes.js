@@ -1,59 +1,37 @@
 import * as React from 'react';
-import {graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
-import MeasurementsList from '../components/measurementsList';
-import Parts from '../components/parts';
-import PartFragment from '../components/fragments/partFragment';
-import MeasurementFragment from '../components/fragments/measurementFragment';
-import ProductFragment from '../components/fragments/productFragment';
-import ActionFragment from '../components/fragments/actionFragment';
+import {graphql} from 'gatsby';
+import RecipeCard from '../components/recipeCard';
 
 const RecipesPage = ({data}) => {
   return (
     <React.Fragment>
-      <ProductFragment />
-      <MeasurementFragment />
-      <ActionFragment />
-      <PartFragment />
       <Helmet>
         <title>Recipes | Daily Food</title>
       </Helmet>
       <main>
-        <h1>{data.server.getRecipe.title}</h1>
-        <p>{data.server.getRecipe.description}</p>
-        <MeasurementsList measurements={data.server.getRecipe.measurements} />
-        {/* {JSON.stringify(data.server.getRecipe.parts)} */}
-        <Parts parts={data.server.getRecipe.parts} />
+        {(() => {
+          if (data.server.queryRecipe) {
+            return data.server.queryRecipe.map((recipe) => (
+              <RecipeCard key={recipe.id} {...recipe} />
+            ));
+          } else {
+            return <span>No data</span>;
+          }
+        })()}
       </main>
     </React.Fragment>
   );
 };
 
 export const query = graphql`
-  query RecipeQuery {
+  query {
     server {
-      getRecipe(id: "0x4e71") {
+      queryRecipe {
+        id
+        slug
         title
         description
-        measurements {
-          ...MeasurementFragment
-          product {
-            ...ProductFragment
-            measurements {
-              ...MeasurementFragment
-              product {
-                ...ProductFragment
-              }
-            }
-          }
-        }
-        parts {
-          ...PartFragment
-          related {
-            ...PartFragment
-          }
-        }
-        draft
       }
     }
   }

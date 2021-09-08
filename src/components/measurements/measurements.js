@@ -1,6 +1,6 @@
 import React from 'react';
-import Amount from './amount';
-import Product from './product';
+import Amount from './measurement/amount';
+import Product from './measurement/product';
 import {styled} from '@material-ui/system';
 
 const Grid = styled('div')({

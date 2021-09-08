@@ -1,5 +1,12 @@
+type Schedule {
+  id: ID!
+  date: DateTime @search
+  recipe: Recipe
+}
+
 type Recipe {
   id: ID!
+  slug: String!
   title: String!
   description: String
   measurements: [Measurement]

@@ -1,6 +1,6 @@
 import React from 'react';
 import convert from 'convert-units';
-import {EXCLUDED_UNITS} from '../../constants';
+import {EXCLUDED_UNITS} from '../../../../constants';
 import UnitSelect from './unitSelect';
 import {useSelector} from 'react-redux';
 

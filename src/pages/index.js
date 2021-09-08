@@ -1,30 +1,72 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import Timezone from '../components/timezone/timezone';
-import {graphql} from 'gatsby';
+import {graphql, StaticQuery} from 'gatsby';
+import {isToday, parseISO} from 'date-fns';
+import PartFragment from '../components/fragments/partFragment';
+import MeasurementFragment from '../components/fragments/measurementFragment';
+import ProductFragment from '../components/fragments/productFragment';
+import ActionFragment from '../components/fragments/actionFragment';
+import Recipe from './recipe';
 
-const IndexPage = ({data}) => {
+const IndexPage = () => {
   return (
     <React.Fragment>
+      <ProductFragment />
+      <MeasurementFragment />
+      <ActionFragment />
+      <PartFragment />
       <Helmet>
         <title>Today | Daily Food</title>
       </Helmet>
       <main>
         <Timezone></Timezone>
-        {data.site.siteMetadata.title}
+        <StaticQuery
+          query={graphql`
+            query {
+              server {
+                querySchedule {
+                  date
+                  recipe {
+                    slug
+                    title
+                    description
+                    measurements {
+                      ...MeasurementFragment
+                      product {
+                        ...ProductFragment
+                        measurements {
+                          ...MeasurementFragment
+                          product {
+                            ...ProductFragment
+                          }
+                        }
+                      }
+                    }
+                    parts {
+                      ...PartFragment
+                      related {
+                        ...PartFragment
+                      }
+                    }
+                    draft
+                  }
+                }
+              }
+            }
+          `}
+          render={(data) => {
+            const scheduleToday = data.server.querySchedule.find((s) => isToday(parseISO(s.date)));
+            if (scheduleToday) {
+              return <Recipe recipe={scheduleToday.recipe} />;
+            } else {
+              return <p>No recipe today guys</p>;
+            }
+          }}
+        />
       </main>
     </React.Fragment>
   );
 };
-
-export const query = graphql`
-  query IndexPageQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
 
 export default IndexPage;

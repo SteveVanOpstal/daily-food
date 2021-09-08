@@ -1,15 +1,20 @@
 import * as React from 'react';
-import {Helmet} from 'react-helmet';
+import MeasurementsList from '../components/measurements/measurementsList';
+import Parts from '../components/parts/parts';
+import PeopleSelect from '../components/peopleSelect';
 
-const RecipePage = () => {
+const Recipe = ({recipe}) => {
   return (
     <React.Fragment>
-      <Helmet>
-        <title>{/*recipe.title*/} | Daily Food</title>
-      </Helmet>
-      <main></main>
+      <main>
+        <h1>{recipe.title}</h1>
+        <p>{recipe.description}</p>
+        <PeopleSelect />
+        <MeasurementsList measurements={recipe.measurements} />
+        <Parts parts={recipe.parts} />
+      </main>
     </React.Fragment>
   );
 };
 
-export default RecipePage;
+export default Recipe;
