@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {styled} from '@material-ui/system';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -346,6 +347,10 @@ const timezones = i18nTimezones
     return timezone1.offset > timezone2.offset ? 1 : -1;
   });
 
+const Span = styled('span')({
+  whiteSpace: 'nowrap',
+});
+
 const TimezoneSelect = (props) => {
   const defaultTimezoneName = spacetime.now().timezone().name;
   const GmtTimezone = timezones.find((timezone) => timezone.key === 'GMT');
@@ -375,12 +380,12 @@ const TimezoneSelect = (props) => {
 
   return (
     <React.Fragment>
-      <span>
+      <Span>
         {currentTime.time()}
-        <Button onClick={() => setOpen(true)}>
+        <Button sx={{p: '0 0.25em', minWidth: 0}} onClick={() => setOpen(true)}>
           {selectedTimezone.abbrev || selectedTimezone.label}
         </Button>
-      </span>
+      </Span>
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogContent>
           <FormControl>

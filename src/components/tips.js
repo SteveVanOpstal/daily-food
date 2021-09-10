@@ -6,7 +6,9 @@ const Tips = ({tips}) => {
   return (
     <Box>
       {tips.map((tip) => (
-        <Tip key={tip.id} {...tip} />
+        <Tip key={tip.id} title={tip.title}>
+          {tip.description}
+        </Tip>
       ))}
     </Box>
   );

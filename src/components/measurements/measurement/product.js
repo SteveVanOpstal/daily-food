@@ -11,13 +11,13 @@ const Title = styled('h1')({
   marginTop: 0,
 });
 
-const Product = (props) => {
+const Product = ({measurement}) => {
   const [open, setOpen] = React.useState(false);
 
   return (
     <span>
       {(() => {
-        if (props.product.measurements?.length) {
+        if (measurement.product.measurements?.length) {
           return (
             <Button
               sx={{
@@ -29,22 +29,22 @@ const Product = (props) => {
               }}
               onClick={() => setOpen(true)}
             >
-              <ProductName {...props} />
+              <ProductName measurement={measurement} />
             </Button>
           );
         } else {
-          return <ProductName {...props} />;
+          return <ProductName measurement={measurement} />;
         }
       })()}
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogContent>
           <Title>
-            <ProductName {...props} />
+            <ProductName measurement={measurement} />
           </Title>
           <Box sx={{paddingBottom: 2}}>
-            <Measurements measurements={props.product.measurements} />
+            <Measurements measurements={measurement.product.measurements} />
           </Box>
-          <Tips tips={props.product.tips} />
+          <Tips tips={measurement.product.tips} />
         </DialogContent>
       </Dialog>
     </span>

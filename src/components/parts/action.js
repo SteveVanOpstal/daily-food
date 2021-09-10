@@ -15,8 +15,7 @@ const Action = ({action}) => {
             return (
               <span>
                 {start} <Amount measurement={action.measurement} />{' '}
-                <Product amount={action.measurement.amount} product={action.measurement.product} />{' '}
-                {end}
+                <Product measurement={action.measurement} /> {end}
               </span>
             );
           } else {

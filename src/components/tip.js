@@ -15,14 +15,14 @@ function TipsAndUpdatesIcon(props) {
   );
 }
 
-const Tip = ({title, description}) => {
+const Tip = ({title, children}) => {
   return (
     <Paper elevation={3} sx={{padding: '0.8em'}}>
       <Box sx={{display: 'flex'}}>
         <TipsAndUpdatesIcon sx={{marginRight: '0.4em', marginTop: '0.2em'}} color="primary" />
         <Title>{title}</Title>
       </Box>
-      {description}
+      {children}
     </Paper>
   );
 };

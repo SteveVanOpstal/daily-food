@@ -1,9 +1,15 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+import {peopleAdjustedAmount} from './amount';
 
-const ProductName = ({amount, product}) => {
+const ProductName = ({measurement}) => {
+  const people = useSelector((state) => state.people.value);
+
   return (
     <React.Fragment>
-      {amount === 1 || !product.plural ? product.name : product.plural}
+      {peopleAdjustedAmount(measurement, people) === 1 || !measurement.product.plural
+        ? measurement.product.name
+        : measurement.product.plural}
     </React.Fragment>
   );
 };

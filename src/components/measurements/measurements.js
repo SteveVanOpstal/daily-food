@@ -18,16 +18,15 @@ const ProductArea = styled(Product)({
   gridArea: 'product',
 });
 
-const Measurements = ({children, measurements}) => {
+const Measurements = ({measurements}) => {
   return (
     <Grid>
       {measurements.map((measurement) => (
         <React.Fragment key={measurement.id}>
           <AmountArea measurement={measurement} />
-          <ProductArea amount={measurement.amount} product={measurement.product} />
+          <ProductArea measurement={measurement} />
         </React.Fragment>
       ))}
-      {children}
     </Grid>
   );
 };

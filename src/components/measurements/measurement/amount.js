@@ -1,8 +1,8 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import convert from 'convert-units';
 import {EXCLUDED_UNITS} from '../../../../constants';
 import UnitSelect from './unitSelect';
-import {useSelector} from 'react-redux';
 
 const BASE_PEOPLE = 2;
 
@@ -24,6 +24,14 @@ export function fractions(value) {
   }
 }
 
+export function peopleAdjustedAmount(measurement, people) {
+  if (measurement.unit?.relative) {
+    return measurement.amount;
+  }
+  const amount = (measurement.amount / BASE_PEOPLE) * people;
+  return amount || '';
+}
+
 const Amount = ({measurement}) => {
   const system = useSelector((state) => state.system.value);
   const people = useSelector((state) => state.people.value);
@@ -41,23 +49,17 @@ const Amount = ({measurement}) => {
   };
 
   const handleConversion = (system) => {
-    return convert(peopleAdjustedAmount()).from(_unit()).toBest({system, exclude: EXCLUDED_UNITS});
+    return convert(peopleAdjustedAmount(measurement, people))
+      .from(_unit())
+      .toBest({system, exclude: EXCLUDED_UNITS});
   };
 
   const unitPluralise = () => {
-    if (peopleAdjustedAmount() === 1) {
+    if (peopleAdjustedAmount(measurement, people) === 1) {
       return measurement.unit?.singular;
     } else {
       return measurement.unit?.plural;
     }
-  };
-
-  const peopleAdjustedAmount = () => {
-    if (measurement.unit?.relative) {
-      return measurement.amount;
-    }
-    const amount = (measurement.amount / BASE_PEOPLE) * people;
-    return amount || '';
   };
 
   return (
@@ -65,7 +67,8 @@ const Amount = ({measurement}) => {
       {knownUnit() && <UnitSelect {...handleConversion(system)} id={measurement.id} />}
       {!knownUnit() && (
         <React.Fragment>
-          {fractions(roundToPrecision(peopleAdjustedAmount(), 3))} {unitPluralise()}
+          {fractions(roundToPrecision(peopleAdjustedAmount(measurement, people), 3))}{' '}
+          {unitPluralise()}
         </React.Fragment>
       )}
     </span>
