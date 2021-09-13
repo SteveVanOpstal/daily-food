@@ -47,7 +47,7 @@ const MeasurementsList = ({measurements}) => {
                     sx={{textTransform: 'none', fontSize: '1em', p: 0}}
                     onClick={() => setBasicOpen(true)}
                   >
-                    {basicMeasurements.length} more ...
+                    {basicMeasurements.length} more
                   </Button>
                 </GridButton>
               );

@@ -1,13 +1,13 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import Timezone from '../components/timezone/timezone';
-import {graphql, StaticQuery} from 'gatsby';
+import {graphql, StaticQuery, Link} from 'gatsby';
 import {isToday, parseISO} from 'date-fns';
 import PartFragment from '../components/fragments/partFragment';
 import MeasurementFragment from '../components/fragments/measurementFragment';
 import ProductFragment from '../components/fragments/productFragment';
 import ActionFragment from '../components/fragments/actionFragment';
-import Recipe from './recipe';
+import Recipe from '../components/recipe';
 
 const IndexPage = () => {
   return (
@@ -20,7 +20,7 @@ const IndexPage = () => {
         <title>Today | Daily Food</title>
       </Helmet>
       <main>
-        <Timezone></Timezone>
+        <Timezone />
         <StaticQuery
           query={graphql`
             query {
@@ -60,7 +60,11 @@ const IndexPage = () => {
             if (scheduleToday) {
               return <Recipe recipe={scheduleToday.recipe} />;
             } else {
-              return <p>No recipe today guys</p>;
+              return (
+                <p>
+                  No recipe today, check out the <Link to="/schedule">schedule</Link>
+                </p>
+              );
             }
           }}
         />

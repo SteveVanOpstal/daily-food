@@ -14,6 +14,8 @@ const basicProductsPage = ({data}) => {
             return data.server.queryProduct.map((product) => {
               if (product.basic) {
                 return <div>{product.plural || product.name}</div>;
+              } else {
+                return undefined;
               }
             });
           } else {

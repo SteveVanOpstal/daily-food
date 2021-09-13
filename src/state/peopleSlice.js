@@ -1,14 +1,16 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+const storage = typeof window === 'undefined' ? undefined : localStorage;
+
 export const peopleSlice = createSlice({
   name: 'people',
   initialState: {
-    value: parseInt(localStorage.getItem('people'), 10) || 2,
+    value: parseInt(storage?.getItem('people'), 10) || 2,
   },
   reducers: {
     set: (state, action) => {
       state.value = action.payload;
-      localStorage.setItem('people', state.value);
+      storage?.setItem('people', state.value);
     },
   },
 });

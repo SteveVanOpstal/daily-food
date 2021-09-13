@@ -7,9 +7,9 @@ const ProductName = ({measurement}) => {
 
   return (
     <React.Fragment>
-      {peopleAdjustedAmount(measurement, people) === 1 || !measurement.product.plural
+      {peopleAdjustedAmount(measurement, people) <= 1
         ? measurement.product.name
-        : measurement.product.plural}
+        : measurement.product.plural || measurement.product.name}
     </React.Fragment>
   );
 };

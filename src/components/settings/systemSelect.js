@@ -1,10 +1,8 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {set} from '../../state/systemSlice';
-import ToggleButtonGroup from '@material-ui/core/ToggleButtonGroup';
-import ToggleButton from '@material-ui/core/ToggleButton';
+import {ToggleButtonGroup, ToggleButton, SvgIcon} from '@material-ui/core';
 import StraightenIcon from '@material-ui/icons/Straighten';
-import SvgIcon from '@material-ui/core/SvgIcon';
 
 function CrownIcon(props) {
   return (

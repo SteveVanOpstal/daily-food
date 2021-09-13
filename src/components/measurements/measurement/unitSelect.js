@@ -1,14 +1,16 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import convert from 'convert-units';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import FormControl from '@material-ui/core/FormControl';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import List from '@material-ui/core/List';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemButton from '@material-ui/core/ListItemButton';
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  FormControl,
+  OutlinedInput,
+  List,
+  ListItemText,
+  ListItemButton,
+} from '@material-ui/core';
 import {styled} from '@material-ui/system';
 import {EXCLUDED_UNITS} from '../../../../constants';
 import {fractions, roundToPrecision} from './amount';
@@ -69,7 +71,7 @@ const UnitSelect = (props) => {
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogContent>
           <FormControl>
-            <List native input={<OutlinedInput label="Timezone" />}>
+            <List input={<OutlinedInput label="Timezone" />}>
               {possibleUnits.map((unit) => (
                 <ListItemButton
                   key={unit.abbr}

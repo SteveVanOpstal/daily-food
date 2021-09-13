@@ -55,7 +55,7 @@ const Amount = ({measurement}) => {
   };
 
   const unitPluralise = () => {
-    if (peopleAdjustedAmount(measurement, people) === 1) {
+    if (peopleAdjustedAmount(measurement, people) <= 1) {
       return measurement.unit?.singular;
     } else {
       return measurement.unit?.plural;

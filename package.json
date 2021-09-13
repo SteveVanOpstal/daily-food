@@ -8,8 +8,11 @@
     "gatsby"
   ],
   "scripts": {
+    "predevelop": "node scripts/timezones.js",
     "develop": "gatsby develop",
+    "prestart": "node scripts/timezones.js",
     "start": "gatsby develop",
+    "prebuild": "node scripts/timezones.js",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -18,17 +21,10 @@
     "dgraph-init": "curl -X POST localhost:8080/admin/schema --data-binary '@graph/schema.graphql'"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@fontsource/allison": "^4.5.1",
-    "@fontsource/amatic-sc": "^4.5.0",
+    "@fontsource/permanent-marker": "^4.5.0",
     "@fontsource/annie-use-your-telescope": "^4.5.0",
     "@fontsource/give-you-glory": "^4.5.0",
     "@fontsource/montserrat": "^4.5.1",
-    "@fontsource/open-sans": "^4.5.0",
-    "@fontsource/permanent-marker": "^4.5.0",
-    "@fontsource/poppins": "^4.5.0",
-    "@fontsource/sue-ellen-francisco": "^4.5.0",
     "@material-ui/core": "^5.0.0-beta.4",
     "@material-ui/icons": "^5.0.0-beta.4",
     "@material-ui/styled-engine-sc": "^5.0.0-beta.1",
@@ -38,7 +34,6 @@
     "convert-units": "^2.3.4",
     "date-fns": "^2.23.0",
     "gatsby": "^3.0.0",
-    "gatsby-plugin-gatsby-cloud": "^1.0.2",
     "gatsby-plugin-image": "^0.7.2",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-react-helmet": "^3.10.0",
@@ -52,7 +47,6 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-redux": "^7.2.4",
-    "react-timezone-select": "^1.0.7",
     "spacetime": "^6.16.3",
     "spacetime-informal": "^0.6.1",
     "styled-components": "^5.3.0"

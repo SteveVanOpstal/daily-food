@@ -1,14 +1,16 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+const storage = typeof window === 'undefined' ? undefined : localStorage;
+
 export const fontSlice = createSlice({
   name: 'font',
   initialState: {
-    value: localStorage.getItem('font') || 'marker',
+    value: storage?.getItem('font') || 'marker',
   },
   reducers: {
     set: (state, action) => {
       state.value = action.payload;
-      localStorage.setItem('font', state.value);
+      storage?.setItem('font', state.value);
     },
   },
 });

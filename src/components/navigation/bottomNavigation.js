@@ -1,8 +1,6 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import Paper from '@material-ui/core/Paper';
+import {BottomNavigation, BottomNavigationAction, Paper} from '@material-ui/core';
 import RestoreIcon from '@material-ui/icons/Restore';
 import DinnerDiningIcon from '@material-ui/icons/DinnerDining';
 import ReceiptLongIcon from '@material-ui/icons/ReceiptLong';

@@ -1,7 +1,7 @@
 import React from 'react';
 import TopNavigation from './navigation/topNavigation';
 import BottomNavigation from './navigation/bottomNavigation';
-import Box from '@material-ui/core/Box';
+import {Box} from '@material-ui/core';
 import Settings from './settings/settings';
 
 const Layout = ({children, location}) => {
@@ -15,7 +15,7 @@ const Layout = ({children, location}) => {
       >
         <TopNavigation />
       </Box>
-      <Box sx={{maxWidth: 800, margin: 1}}>
+      <Box sx={{maxWidth: 800, width: '100%'}}>
         {children}
         <Box sx={{displayPrint: 'none', marginBottom: '56px'}}>
           <Settings />

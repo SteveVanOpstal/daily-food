@@ -28,8 +28,8 @@ const PeopleSelect = () => {
         <IconButton sx={{p: 0}} onClick={() => handlePeopleChange(people + 1)}>
           <AddCircleOutlineIcon color="primary" />
         </IconButton>
-        <Tooltip title={`Serves ${people} people`}>
-          <Highlight>{people}</Highlight>
+        <Tooltip title={`serves ${people} ${people <= 1 ? 'person' : 'people'}`} placement="left">
+          <Highlight sx={{lineHeight: '32px'}}>{people}</Highlight>
         </Tooltip>
         <IconButton sx={{p: 0}} onClick={() => handlePeopleChange(people - 1)}>
           <RemoveCircleOutlineIcon color="primary" />

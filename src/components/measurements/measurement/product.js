@@ -2,7 +2,7 @@ import {Button, Dialog, Box} from '@material-ui/core';
 import React from 'react';
 import Measurements from '../measurements';
 import ProductName from './productName';
-import DialogContent from '@material-ui/core/DialogContent';
+import {DialogContent} from '@material-ui/core';
 import {styled} from '@material-ui/system';
 import Tips from '../../tips';
 

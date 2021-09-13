@@ -5,7 +5,7 @@ import PartFragment from '../components/fragments/partFragment';
 import MeasurementFragment from '../components/fragments/measurementFragment';
 import ProductFragment from '../components/fragments/productFragment';
 import ActionFragment from '../components/fragments/actionFragment';
-import Recipe from '../pages/recipe';
+import Recipe from '../components/recipe';
 
 const RecipeTemplate = ({data}) => {
   return (

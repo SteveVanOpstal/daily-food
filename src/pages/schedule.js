@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {Helmet} from 'react-helmet';
 import {graphql} from 'gatsby';
-import {parseISO, format, isThisYear, isToday, isYesterday, isTomorrow} from 'date-fns';
-import RecipeCard from '../components/recipeCard';
+import Schedule from '../components/schedule/schedule';
 
 const SchedulePage = ({data}) => {
   return (
@@ -12,27 +11,8 @@ const SchedulePage = ({data}) => {
       </Helmet>
       <main>
         {(() => {
-          if (data.server.querySchedule) {
-            return data.server.querySchedule.map((schedule) => {
-              const date = parseISO(schedule.date);
-              return (
-                <React.Fragment key={schedule.id}>
-                  {(() => {
-                    if (isYesterday(date)) {
-                      return 'Yesterday';
-                    } else if (isToday(date)) {
-                      return 'Today';
-                    } else if (isTomorrow(date)) {
-                      return 'Tomorrow';
-                    } else {
-                      return <p>{format(date, 'eeee')}</p>;
-                    }
-                  })()}
-                  <p>{format(date, 'LLLL do' + (isThisYear(date) ? '' : ' u'))}</p>
-                  <RecipeCard {...schedule.recipe} />
-                </React.Fragment>
-              );
-            });
+          if (data.server.querySchedule.length) {
+            return <Schedule schedules={data.server.querySchedule} />;
           } else {
             return <span>No data</span>;
           }

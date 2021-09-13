@@ -33,7 +33,3 @@ const Settings = () => {
 };
 
 export default Settings;
-
-// {/* <IconButton onClick={() => setOpen(true)}>
-//   <SettingsIcon color="primary" />
-// </IconButton> */}

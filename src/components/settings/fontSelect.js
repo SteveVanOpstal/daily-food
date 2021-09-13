@@ -1,8 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {set} from '../../state/fontSlice';
-import ToggleButtonGroup from '@material-ui/core/ToggleButtonGroup';
-import ToggleButton from '@material-ui/core/ToggleButton';
+import {ToggleButton, ToggleButtonGroup} from '@material-ui/core';
 
 const FontSelect = () => {
   const font = useSelector((state) => state.font.value);

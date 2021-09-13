@@ -1,6 +1,6 @@
 import * as React from 'react';
-import MeasurementsList from '../components/measurements/measurementsList';
-import Parts from '../components/parts/parts';
+import MeasurementsList from './measurements/measurementsList';
+import Parts from './parts/parts';
 
 const Recipe = ({recipe}) => {
   return (

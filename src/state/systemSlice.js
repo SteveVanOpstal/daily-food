@@ -1,14 +1,16 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+const storage = typeof window === 'undefined' ? undefined : localStorage;
+
 export const systemSlice = createSlice({
   name: 'system',
   initialState: {
-    value: localStorage.getItem('system') === 'imperial' ? 'imperial' : 'metric',
+    value: storage?.getItem('system') === 'imperial' ? 'imperial' : 'metric',
   },
   reducers: {
     set: (state, action) => {
       state.value = action.payload;
-      localStorage.setItem('system', state.value);
+      storage?.setItem('system', state.value);
     },
   },
 });
