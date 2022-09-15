@@ -39,7 +39,7 @@ const TopNavigation = () => {
         }}
       >
         <NavItem sx={{textAlign: 'right'}}>
-          <StyledLink activeClassName="active" to="/schedule">
+          <StyledLink activeClassName="active" to="/schedule/">
             Schedule
           </StyledLink>
         </NavItem>
@@ -49,7 +49,7 @@ const TopNavigation = () => {
           </StyledLink>
         </Today>
         <NavItem>
-          <StyledLink activeClassName="active" to="/recipes">
+          <StyledLink activeClassName="active" to="/recipes/">
             Recipes
           </StyledLink>
         </NavItem>

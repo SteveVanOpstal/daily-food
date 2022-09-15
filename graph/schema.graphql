@@ -7,8 +7,8 @@ type Schedule {
 type Recipe {
   id: ID!
   slug: String!
-  title: String!
-  description: String
+  title: String! @search(by: [fulltext])
+  description: String @search(by: [fulltext])
   measurements: [Measurement]
   parts: [Part]
   draft: Boolean!

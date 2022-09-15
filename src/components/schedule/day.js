@@ -38,10 +38,7 @@ const Day = ({schedules, year, month, date}) => {
         ':hover': {
           backgroundColor: isSelectedSchedule ? 'secondary.main' : undefined,
         },
-        minWidth: {
-          xs: 48,
-          sm: 64,
-        },
+        minWidth: 0,
       }}
       disabled={!schedule}
       onClick={() => select(schedule)}

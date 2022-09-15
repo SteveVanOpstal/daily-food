@@ -67,7 +67,7 @@ const MeasurementsList = ({measurements}) => {
               some products are 'hidden' as I percieve them as being 'basic' products a kitchen
               should always be stocked with. For a full list see:
             </span>{' '}
-            <Link to="/basic-products">Basic products</Link>
+            <Link to="/basic-products/">Basic products</Link>
           </Tip>
         </DialogContent>
       </Dialog>

@@ -125,15 +125,15 @@ mutation {
       {
         name: "greek seasoning"
         measurements: [
-          {id: "0x4e59"}
-          {id: "0x4e4c"}
-          {id: "0x4e4d"}
-          {id: "0x4e58"}
-          {id: "0x4e4e"}
-          {id: "0x4e54"}
-          {id: "0x4e5a"}
+          {id: "0x1a48605440"}
+          {id: "0x1a48605447"}
+          {id: "0x1a4860543f"}
+          {id: "0x1a48605448"}
+          {id: "0x1a48605438"}
+          {id: "0x1a48605444"}
+          {id: "0x1a48605447"}
         ]
-        tips: [{id: "0x4e60"}]
+        tips: [{id: "0x1a4860544d"}]
       }
     ]
   ) {
@@ -165,13 +165,13 @@ mutation {
   addAction(
     input: [
       {description: "preheat oven - 210", icon: "oven"}
-      {description: "Cut {1} in half", icon: "knife", measurement: {id: "0x4e4a"}}
-      {description: "{1}", icon: "hand", measurement: {id: "0x4e48"}}
-      {description: "{1} cut edge down", icon: "hand", measurement: {id: "0x4e4a"}}
+      {description: "Cut {1} in half", icon: "knife", measurement: {id: "0x1a4860543b"}}
+      {description: "{1}", icon: "hand", measurement: {id: "0x1a4860543b"}}
+      {description: "{1} cut edge down", icon: "hand", measurement: {id: "0x1a4860543b"}}
       {description: "bake ~20-25min or until soft (cooked) all the way through", icon: "oven"}
-      {description: "wisk {1}", icon: "wisk", measurement: {id: "0x4e49"}}
-      {description: "crumble {1}", icon: "hand", measurement: {id: "0x4e50"}}
-      {description: "chop {1}", icon: "knife", measurement: {id: "0x4e57"}}
+      {description: "wisk {1}", icon: "wisk", measurement: {id: "0x1a4860543e"}}
+      {description: "crumble {1}", icon: "hand", measurement: {id: "0x1a48605441"}}
+      {description: "chop {1}", icon: "knife", measurement: {id: "0x1a48605445"}}
       {description: "mix together", icon: "spoon"}
     ]
   ) {
@@ -192,10 +192,15 @@ mutation {
 mutation {
   addAction(
     input: [
-      {description: "On a baking tray", actions: [{id: "0x4e67"}, {id: "0x4e6a"}]}
+      {description: "On a baking tray", actions: [{id: "0x1a4860575d"}, {id: "0x1a4860575e"}]}
       {
         description: "In a bowl"
-        actions: [{id: "0x4e68"}, {id: "0x4e69"}, {id: "0x4e64"}, {id: "0x4e6c"}]
+        actions: [
+          {id: "0x1a4860575f"}
+          {id: "0x1a48605760"}
+          {id: "0x1a48605761"}
+          {id: "0x1a4860575a"}
+        ]
       }
     ]
   ) {
@@ -218,9 +223,14 @@ mutation {
     input: [
       {
         title: "Grilled eggplant"
-        actions: [{id: "0x4e65"}, {id: "0x4e66"}, {id: "0x4e6d"}, {id: "0x4e6b"}]
+        actions: [
+          {id: "0x1a4860575b"}
+          {id: "0x1a4860575c"}
+          {id: "0x1a48605765"}
+          {id: "0x1a48605759"}
+        ]
       }
-      {title: "Tiropitakia filling", actions: [{id: "0x4e6e"}]}
+      {title: "Tiropitakia filling", actions: [{id: "0x1a48605764"}]}
     ]
   ) {
     part {
@@ -237,23 +247,23 @@ mutation {
   addRecipe(
     input: [
       {
+        slug: "tiropitakia-with-melitzanosalata"
         title: "Tiropitakia with Melitzanosalata"
         description: "description"
-        parts: [{id: "0x4e6f"}, {id: "0x4e70"}]
+        parts: [{id: "0x1a48605766"}, {id: "0x1a48605767"}]
         measurements: [
-          {id: "0x4e49"}
-          {id: "0x4e4a"}
-          {id: "0x4e4b"}
-          {id: "0x4e50"}
-          {id: "0x4e51"}
-          {id: "0x4e63"}
-          {id: "0x4e52"}
-          {id: "0x4e48"}
-          {id: "0x4e4f"}
-          {id: "0x4e55"}
-          {id: "0x4e56"}
-          {id: "0x4e57"}
-          {id: "0x4e5b"}
+          {id: "0x1a4860543c"}
+          {id: "0x1a4860543a"}
+          {id: "0x1a4860543b"}
+          {id: "0x1a48605444"}
+          {id: "0x1a4860543d"}
+          {id: "0x1a48605443"}
+          {id: "0x1a48605442"}
+          {id: "0x1a48605445"}
+          {id: "0x1a48605750"}
+          {id: "0x1a48605441"}
+          {id: "0x1a48605439"}
+          {id: "0x1a48605449"}
         ]
         draft: false
       }
@@ -275,7 +285,7 @@ mutation {
 }
 
 mutation {
-  updateProduct(input: [{id: "0x4e38", basic: true}]) {
+  updateProduct(input: [{id: "0x1a48605430", basic: true}]) {
     id
     basic
   }

@@ -62,7 +62,7 @@ const IndexPage = () => {
             } else {
               return (
                 <p>
-                  No recipe today, check out the <Link to="/schedule">schedule</Link>
+                  No recipe today, check out the <Link to="/schedule/">schedule</Link>
                 </p>
               );
             }

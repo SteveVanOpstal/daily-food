@@ -49,6 +49,10 @@ const ThemeStyles = createGlobalStyle`
     font-size: clamp(18px, 18px + 6 * ((100vw - 420px) / 604), 24px);
   }
 
+  #___gatsby {
+    width: 100%
+  }
+
   h1, h2, h3, h4, nav {
     font-family: ${(props) => props.accentFont};
   }

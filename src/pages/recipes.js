@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {Helmet} from 'react-helmet';
 import {graphql} from 'gatsby';
-import RecipeCard from '../components/recipeCard';
+import RecipeCard from '../components/recipeCard/recipeCard';
+import {Grid} from '@material-ui/core';
 
 const RecipesPage = ({data}) => {
   return (
@@ -12,9 +13,15 @@ const RecipesPage = ({data}) => {
       <main>
         {(() => {
           if (data.server.queryRecipe) {
-            return data.server.queryRecipe.map((recipe) => (
-              <RecipeCard key={recipe.id} {...recipe} />
-            ));
+            return (
+              <Grid container>
+                {data.server.queryRecipe.map((recipe) => (
+                  <Grid key={recipe.id} item xs={12} sm={6} md={4}>
+                    <RecipeCard recipe={recipe} />
+                  </Grid>
+                ))}
+              </Grid>
+            );
           } else {
             return <span>No data</span>;
           }

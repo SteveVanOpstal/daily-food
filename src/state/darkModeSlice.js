@@ -5,7 +5,7 @@ const storage = typeof window === 'undefined' ? undefined : localStorage;
 export const darkModeSlice = createSlice({
   name: 'system',
   initialState: {
-    value: storage?.getItem('darkMode') === '1' ? true : false,
+    value: storage?.getItem('darkMode') === 'true' ? true : false,
   },
   reducers: {
     toggle: (state) => {

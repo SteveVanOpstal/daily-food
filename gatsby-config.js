@@ -37,7 +37,7 @@ module.exports = {
       options: {
         typeName: 'server',
         fieldName: 'server',
-        url: 'http://localhost:8080/graphql',
+        url: 'https://billowing-leaf.eu-central-1.aws.cloud.dgraph.io/graphql',
       },
     },
   ],

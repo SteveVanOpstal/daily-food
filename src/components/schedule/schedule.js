@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {IconButton, Stack, Box, Grid} from '@material-ui/core';
+import {IconButton, Stack, Box} from '@material-ui/core';
 import Month from './month';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -38,33 +38,31 @@ const Schedule = ({schedules}) => {
   };
 
   return (
-    <React.Fragment>
-      <IconButton onClick={setToday}>
-        <CalendarTodayIcon />
-      </IconButton>
-      <Stack sx={{maxWidth: 600, margin: 'auto'}}>
-        <Grid container>
-          <Grid item xs={1}>
-            <IconButton onClick={monthDown}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Grid>
-          <Grid item xs={10}>
-            <Box sx={{textAlign: 'center'}}>
-              {format(date, 'MMMM' + (isThisYear(date) ? '' : ' u'))}
-            </Box>
-          </Grid>
-          <Grid item xs={1}>
-            <IconButton onClick={monthUp}>
-              <ChevronRightIcon />
-            </IconButton>
-          </Grid>
-        </Grid>
-        <Box sx={{width: '100%'}}>
-          <Month schedules={schedules} year={year} month={month} />
+    <Stack sx={{maxWidth: 600, margin: 'auto'}}>
+      <Box sx={{margin: 'auto'}}>
+        <IconButton onClick={setToday}>
+          <CalendarTodayIcon />
+        </IconButton>
+      </Box>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        sx={{
+          margin: '0 1em',
+        }}
+      >
+        <IconButton onClick={monthDown}>
+          <ChevronLeftIcon />
+        </IconButton>
+        <Box sx={{textAlign: 'center'}}>
+          {format(date, 'MMMM' + (isThisYear(date) ? '' : ' u'))}
         </Box>
+        <IconButton onClick={monthUp}>
+          <ChevronRightIcon />
+        </IconButton>
       </Stack>
-    </React.Fragment>
+      <Month schedules={schedules} year={year} month={month} />
+    </Stack>
   );
 };
 
