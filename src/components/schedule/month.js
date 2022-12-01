@@ -1,9 +1,10 @@
+import {Box, Stack} from '@mui/material';
+import {addDays, eachWeekOfInterval, format, getDaysInMonth, isSameWeek, parseISO} from 'date-fns';
 import * as React from 'react';
 import {useSelector} from 'react-redux';
-import {Box, Stack} from '@material-ui/core';
-import {format, getDaysInMonth, eachWeekOfInterval, addDays, isSameWeek, parseISO} from 'date-fns';
-import Week from './week';
+
 import RecipeCardContent from '../recipeCard/recipeCardContent';
+import Week from './week';
 
 const Month = ({schedules, year, month}) => {
   const schedule = useSelector((state) => state.schedule.value);

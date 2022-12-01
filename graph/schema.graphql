@@ -19,6 +19,7 @@ type Measurement {
   amount: Float
   unit: Unit
   product: Product!
+  static: Boolean
 }
 
 type Product {
@@ -33,7 +34,6 @@ type Unit {
   abbr: String! @id
   singular: String
   plural: String
-  relative: Boolean
 }
 
 type Tip {

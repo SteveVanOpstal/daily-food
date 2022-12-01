@@ -1,7 +1,8 @@
+import {Button} from '@mui/material';
+import {format, isSameDay, isSameMonth, isToday, parseISO} from 'date-fns';
 import * as React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {Button} from '@material-ui/core';
-import {format, isSameMonth, isToday, isSameDay, parseISO} from 'date-fns';
+import {useDispatch, useSelector} from 'react-redux';
+
 import {set} from '../../state/scheduleSlice';
 
 const Day = ({schedules, year, month, date}) => {

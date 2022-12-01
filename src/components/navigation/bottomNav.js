@@ -1,11 +1,12 @@
+import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import RestoreIcon from '@mui/icons-material/Restore';
+import SettingsIcon from '@mui/icons-material/Settings';
+import {BottomNavigation, BottomNavigationAction, Paper} from '@mui/material';
+import {navigate} from 'gatsby';
 import React from 'react';
 import {useDispatch} from 'react-redux';
-import {BottomNavigation, BottomNavigationAction, Paper} from '@material-ui/core';
-import RestoreIcon from '@material-ui/icons/Restore';
-import DinnerDiningIcon from '@material-ui/icons/DinnerDining';
-import ReceiptLongIcon from '@material-ui/icons/ReceiptLong';
-import SettingsIcon from '@material-ui/icons/Settings';
-import {navigate} from 'gatsby';
+
 import {toggle} from '../../state/drawerSlice';
 
 const BottomNav = ({location}) => {

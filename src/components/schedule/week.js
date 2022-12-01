@@ -1,6 +1,7 @@
-import * as React from 'react';
-import {Stack} from '@material-ui/core';
+import {Stack} from '@mui/material';
 import {addDays} from 'date-fns';
+import * as React from 'react';
+
 import Day from './day';
 
 const Week = ({schedules, year, month, date, onClick}) => {

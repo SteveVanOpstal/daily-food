@@ -1,11 +1,11 @@
-import * as React from 'react';
-import {IconButton, Stack, Box} from '@material-ui/core';
-import Month from './month';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
-
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {Box, IconButton, Stack} from '@mui/material';
 import {format, isThisYear} from 'date-fns';
+import * as React from 'react';
+
+import Month from './month';
 
 const Schedule = ({schedules}) => {
   const currentDate = new Date();

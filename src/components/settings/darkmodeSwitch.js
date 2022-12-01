@@ -1,9 +1,10 @@
-import * as React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {toggle} from '../../state/darkModeSlice';
+import {useSwitch} from '@mui/base/SwitchUnstyled';
+import {styled} from '@mui/material';
 import clsx from 'clsx';
-import {styled} from '@material-ui/system';
-import {useSwitch} from '@material-ui/unstyled/SwitchUnstyled';
+import * as React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+
+import {toggle} from '../../state/darkModeSlice';
 
 const SwitchRoot = styled('span')(`
   display: inline-block;

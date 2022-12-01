@@ -1,5 +1,6 @@
+import {Card, CardContent} from '@mui/material';
 import * as React from 'react';
-import {Card, CardContent} from '@material-ui/core';
+
 import RecipeCardContent from './recipeCardContent';
 
 const RecipeCard = ({recipe}) => {

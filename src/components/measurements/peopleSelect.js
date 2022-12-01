@@ -1,10 +1,10 @@
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import {IconButton, Stack, styled, Tooltip} from '@mui/material';
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {IconButton, Stack, Tooltip} from '@material-ui/core';
-import {styled} from '@material-ui/system';
+import {useDispatch, useSelector} from 'react-redux';
+
 import {set} from '../../state/peopleSlice';
-import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 const Highlight = styled('span')(({theme}) => ({
   color: theme.palette.primary.main,

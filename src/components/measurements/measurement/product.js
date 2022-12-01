@@ -1,10 +1,9 @@
-import {Button, Dialog, Box} from '@material-ui/core';
+import {Box, Button, Dialog, DialogContent, styled} from '@mui/material';
 import React from 'react';
+
+import Tips from '../../tips';
 import Measurements from '../measurements';
 import ProductName from './productName';
-import {DialogContent} from '@material-ui/core';
-import {styled} from '@material-ui/system';
-import Tips from '../../tips';
 
 const Title = styled('h1')({
   fontSize: 22,

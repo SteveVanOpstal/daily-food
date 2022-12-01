@@ -1,5 +1,4 @@
-import {Paper, SvgIcon, Box} from '@material-ui/core';
-import {styled} from '@material-ui/system';
+import {Box, Paper, styled, SvgIcon} from '@mui/material';
 import React from 'react';
 
 const Title = styled('h4')({

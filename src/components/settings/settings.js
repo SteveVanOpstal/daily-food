@@ -1,10 +1,11 @@
+import {Box, Drawer} from '@mui/material';
 import React from 'react';
-import {Drawer, Box} from '@material-ui/core';
-import DarkmodeSwitch from './darkmodeSwitch';
-import SystemSelect from './systemSelect';
-import FontSelect from './fontSelect';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+
 import {close} from '../../state/drawerSlice';
+import DarkmodeSwitch from './darkmodeSwitch';
+import FontSelect from './fontSelect';
+import SystemSelect from './systemSelect';
 
 const Settings = () => {
   const open = useSelector((state) => state.drawer.value);

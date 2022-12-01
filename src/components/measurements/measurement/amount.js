@@ -1,6 +1,7 @@
+import convert from 'convert-units';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import convert from 'convert-units';
+
 import {EXCLUDED_UNITS} from '../../../../constants';
 import UnitSelect from './unitSelect';
 
@@ -25,11 +26,12 @@ export function fractions(value) {
 }
 
 export function peopleAdjustedAmount(measurement, people) {
-  if (measurement.unit?.relative) {
+  if (measurement.static) {
     return measurement.amount;
+  } else {
+    const amount = (measurement.amount / BASE_PEOPLE) * people;
+    return amount || '';
   }
-  const amount = (measurement.amount / BASE_PEOPLE) * people;
-  return amount || '';
 }
 
 const Amount = ({measurement}) => {

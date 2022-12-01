@@ -1,6 +1,6 @@
-import * as React from 'react';
+import {styled} from '@mui/material';
 import {Link} from 'gatsby';
-import {styled} from '@material-ui/system';
+import * as React from 'react';
 
 const Nav = styled('ul')({
   display: 'grid',

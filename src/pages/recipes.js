@@ -1,8 +1,9 @@
+import {Grid} from '@mui/material';
+import {graphql} from 'gatsby';
 import * as React from 'react';
 import {Helmet} from 'react-helmet';
-import {graphql} from 'gatsby';
+
 import RecipeCard from '../components/recipeCard/recipeCard';
-import {Grid} from '@material-ui/core';
 
 const RecipesPage = ({data}) => {
   return (

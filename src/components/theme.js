@@ -1,8 +1,8 @@
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import React from 'react';
-import {useSelector} from 'react-redux';
 import {Helmet} from 'react-helmet';
+import {useSelector} from 'react-redux';
 import {createGlobalStyle} from 'styled-components';
-import {createTheme, ThemeProvider} from '@material-ui/core/styles';
 
 const lightTheme = {
   color: '#424242',

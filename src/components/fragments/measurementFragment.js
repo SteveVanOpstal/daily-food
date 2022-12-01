@@ -12,7 +12,7 @@ export const fragment = graphql`
       abbr
       singular
       plural
-      relative
     }
+    static
   }
 `;

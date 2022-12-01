@@ -1,8 +1,9 @@
+import StraightenIcon from '@mui/icons-material/Straighten';
+import {SvgIcon, ToggleButton, ToggleButtonGroup} from '@mui/material';
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+
 import {set} from '../../state/systemSlice';
-import {ToggleButtonGroup, ToggleButton, SvgIcon} from '@material-ui/core';
-import StraightenIcon from '@material-ui/icons/Straighten';
 
 function CrownIcon(props) {
   return (

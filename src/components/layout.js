@@ -1,7 +1,8 @@
+import {Box} from '@mui/material';
 import React from 'react';
-import TopNavigation from './navigation/topNavigation';
+
 import BottomNav from './navigation/bottomNav';
-import {Box} from '@material-ui/core';
+import TopNavigation from './navigation/topNavigation';
 import Settings from './settings/settings';
 
 const Layout = ({children, location}) => {

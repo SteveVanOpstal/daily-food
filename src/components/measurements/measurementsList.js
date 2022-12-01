@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import {Box, Button, Dialog, DialogContent, Grid, Paper, Stack, styled} from '@mui/material';
 import {Link} from 'gatsby';
-import {Button, Paper, Box, Stack, Grid, Dialog, DialogContent} from '@material-ui/core';
-import Measurements from './measurements';
-import {styled} from '@material-ui/system';
-import PeopleSelect from './peopleSelect';
+import React, {useState} from 'react';
+
 import Tip from '../tip';
+import Measurements from './measurements';
+import PeopleSelect from './peopleSelect';
 
 const GridButton = styled('div')({
   gridColumn: 'span 2',

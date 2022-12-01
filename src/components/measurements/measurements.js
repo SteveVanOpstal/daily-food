@@ -1,7 +1,8 @@
+import {styled} from '@mui/material';
 import React from 'react';
+
 import Amount from './measurement/amount';
 import Product from './measurement/product';
-import {styled} from '@material-ui/system';
 
 const Grid = styled('div')({
   display: 'grid',

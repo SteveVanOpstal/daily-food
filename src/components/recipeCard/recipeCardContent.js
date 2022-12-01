@@ -1,6 +1,6 @@
-import * as React from 'react';
+import {Box, Typography} from '@mui/material';
 import {Link} from 'gatsby';
-import {Box, Typography} from '@material-ui/core';
+import * as React from 'react';
 
 const RecipeCardContent = ({recipe}) => {
   return (

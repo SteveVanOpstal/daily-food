@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
-import {styled} from '@material-ui/system';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 import {
   Button,
   Dialog,
-  FormControl,
   DialogContent,
-  OutlinedInput,
+  FormControl,
   List,
-  ListItemText,
-  ListItemIcon,
   ListItemButton,
-} from '@material-ui/core';
-import ScheduleIcon from '@material-ui/icons/Schedule';
-
+  ListItemIcon,
+  ListItemText,
+  OutlinedInput,
+  styled,
+} from '@mui/material';
+import React, {useState} from 'react';
 import spacetime from 'spacetime';
 
 import timezones from '../../../timezones.json';
