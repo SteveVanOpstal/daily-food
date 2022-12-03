@@ -5,9 +5,11 @@ const Part = ({part}) => {
   return (
     <React.Fragment>
       <h2>{part.title}</h2>
-      {part.actions.map((action) => (
-        <Action key={action.id} action={action} />
-      ))}
+      {part.actions
+        .filter((a) => !!a)
+        .map((action) => (
+          <Action key={action.id} action={action} />
+        ))}
     </React.Fragment>
   );
 };

@@ -25,9 +25,11 @@ const Action = ({action}) => {
         })()}
       </Box>
       <Box sx={{marginLeft: 3}}>
-        {action.actions.map((a) => (
-          <Action key={a.id} action={a} />
-        ))}
+        {action.actions
+          .filter((a) => !!a)
+          .map((a) => (
+            <Action key={a.id} action={a} />
+          ))}
       </Box>
     </React.Fragment>
   );
